@@ -1,0 +1,11 @@
+import React from 'react';
+
+var Note = () => (
+    <li className="note">
+        <input className="note__title" type="text" placeholder="title" />
+        <textarea className="note__description" placeholder="Description..." />
+        <span className="note__delete">X</span>
+    </li>
+);
+
+export default Note;
