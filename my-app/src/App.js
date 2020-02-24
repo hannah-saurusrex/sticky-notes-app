@@ -71,7 +71,24 @@ class App extends Component {
       searchText: searchText,
       notes: updatedNotes
     });
-  }
+  };
+  remove = deleteMeId => {
+    var notIdMatch = note => note.id !== deleteMeId;
+    var updatedNotes = this.state.notes.filter(notIdMatch);
+    this.setState({ notes: updatedNotes });
+  };
+  componentDidUpdate() {
+    var stringifiedNotes = JSON.stringify(this.state.notes);
+    localStorage.setItem('savedNotes', stringifiedNotes);
+  };
+  componentDidMount() {
+    var stringifiedNotes = localStorage.getItem("savedNotes");
+    if (stringifiedNotes) {
+      var savedNotes = JSON.parse(stringifiedNotes);
+      this.setState({ notes: savedNotes });
+    }
+  };
+
     render() {
       return (
       <div>
@@ -80,7 +97,10 @@ class App extends Component {
           addNote={this.addNote}
           onSearch={this.onSearch} 
         />
-        <NotesList notes={this.state.notes} onType={this.onType} />
+        <NotesList 
+          notes={this.state.notes} 
+          onType={this.onType}
+          remove={this.remove} />
       </div>
     );
   }

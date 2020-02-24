@@ -10,7 +10,9 @@ var NotesList = props => {
         <Note 
             note={note} 
             key={note.id} 
-            onType={props.onType} />
+            onType={props.onType}
+            remove={props.remove} 
+        />
     );
 
     var searchMatches = props.notes.filter(keepSearchMatches);
