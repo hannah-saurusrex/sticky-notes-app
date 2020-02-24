@@ -1,4 +1,5 @@
 import React from 'react';
+// single note. using props to add the description
 
 var Note = props => (
     <li className="note">
