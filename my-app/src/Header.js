@@ -13,8 +13,9 @@ var Header = props => (
             className="search" 
             type="text" 
             placeholder="Type here to search..."
-            value={props.searchText}>
-        </input>
+            value={props.searchText}
+            onChange={props.onSearch}
+        />
         </aside>
     </header>
 );
