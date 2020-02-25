@@ -5,6 +5,7 @@
 body {
 	margin: 0;
 	padding: 0;
+	font-family: "Raleway", "Open Sans";
 }
 
 input,
@@ -15,7 +16,6 @@ textarea {
 
 .app-header__title {
 	margin: 10px 20px 0;
-	font-family: Arial, sans-serif;
 }
 
 .app-header__controls {
@@ -45,6 +45,11 @@ textarea {
 	outline: none;
 }
 
+.add-new:hover {
+	background-color: salmon;
+	color: white;
+}
+
 .notes-list {
 	display: flex;
 	flex-wrap: wrap;
@@ -62,6 +67,9 @@ textarea {
 	display: flex;
 	flex-direction: column;
 	position: relative;
+	-webkit-box-shadow: 6px 6px 5px 0px rgba(173, 173, 173, 0.74);
+	-moz-box-shadow: 6px 6px 5px 0px rgba(173, 173, 173, 0.74);
+	box-shadow: 6px 6px 5px 0px rgba(173, 173, 173, 0.74);
 }
 
 .note__title,
@@ -87,7 +95,7 @@ textarea {
 	right: 0px;
 	font-size: 20px;
 	color: lightgrey;
-	padding: 5px;
+	padding: 7px;
 }
 
 .note__delete:hover {
